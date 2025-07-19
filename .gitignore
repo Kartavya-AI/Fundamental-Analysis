@@ -1,0 +1,9 @@
+.env
+__pycache__/
+.DS_Store
+risk_sentiment_task.md 
+valuation_task.md 
+report.md 
+macro_sector_task.md 
+financial_analysis_task.md 
+company_research_task.md

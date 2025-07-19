@@ -1,0 +1,54 @@
+company_research_task:
+  description: >
+    Conduct a thorough research about {company_name}, including its business model,
+    history, recent news, leadership, and product offerings.
+    Make sure you find any interesting and relevant information given
+    the current year is {current_year}.
+  expected_output: >
+    A list with 10 bullet points of the most relevant information about {company_name}
+  agent: company_researcher
+
+financial_analysis_task:
+  description: >
+    Analyze the financial statements of {company_name}, including income statement,
+    balance sheet, and cash flow statement. Focus on key ratios, trends, and any red flags.
+  expected_output: >
+    A list with 10 bullet points summarizing key financial insights from the statements.
+  agent: financial_analyst
+
+valuation_task:
+  description: >
+    current_year:{current_year}
+    Perform a valuation of {company_name} using DCF and comparable company analysis.
+    Include assumptions, forecasts, and sensitivity analysis if applicable.
+  expected_output: >
+    A list with 10 bullet points summarizing valuation outcomes and assumptions used.
+  agent: valuation_analyst
+
+macro_sector_task:
+  description: >
+    current_year:{current_year}
+    Conduct a macroeconomic and industry analysis related to {company_name}'s sector.
+    Look into interest rates, GDP, inflation, sector trends, and competitive landscape.
+  expected_output: >
+    A list with 10 bullet points about macroeconomic and industry-level factors impacting {company_name}
+  agent: macro_sector_analyst
+
+risk_sentiment_task:
+  description: >
+    current_year:{current_year}
+    Perform a sentiment and qualitative risk analysis on {company_name}.
+    Use recent news, lawsuits, ESG risks, and online sentiment to identify possible concerns.
+  expected_output: >
+    A list with 10 bullet points outlining key risks and sentiment trends around {company_name}
+  agent: risk_sentiment_analyst
+
+reporting_task:
+  description: >
+    current_year:{current_year}
+    Review the context you got and expand each topic into a full section for a report.
+    Make sure the report is detailed and contains any and all relevant information.
+  expected_output: >
+    A fully fledged report with the main topics, each with a full section of information.
+    Formatted as markdown without '```'
+  agent: reporting_analyst

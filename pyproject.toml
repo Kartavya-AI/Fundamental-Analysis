@@ -1,0 +1,23 @@
+[project]
+name = "fundamental_analyst"
+version = "0.1.0"
+description = "Fundamental_analyst using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.121.1,<1.0.0"
+]
+
+[project.scripts]
+fundamental_analyst = "fundamental_analyst.main:run"
+run_crew = "fundamental_analyst.main:run"
+train = "fundamental_analyst.main:train"
+replay = "fundamental_analyst.main:replay"
+test = "fundamental_analyst.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
