@@ -1,54 +1,263 @@
-# FundamentalAnalyst Crew
+# 📊 Fundamental Company Analyst
 
-Welcome to the FundamentalAnalyst Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+> **AI-Powered Financial Analysis using CrewAI**
 
-## Installation
+A comprehensive fundamental analysis tool that leverages AI agents to perform in-depth company research, financial analysis, and investment insights generation.
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+---
 
-First, if you haven't already, install uv:
+## 🚀 Features
 
-```bash
-pip install uv
+### 🤖 AI-Powered Analysis Team
+
+- **Company Researcher** - Uncovers cutting-edge developments and business intelligence
+- **Financial Analyst** - Analyzes financial statements and identifies trends
+- **Valuation Analyst** - Performs DCF and comparable company analysis
+- **Macro Sector Analyst** - Provides economic and industry context
+- **Risk Sentiment Analyst** - Identifies risks and sentiment trends
+- **Reporting Analyst** - Compiles comprehensive investment reports
+
+### 🎯 Analysis Capabilities
+
+- 📈 **Financial Metrics** - Revenue, profitability, and growth analysis
+- 🔍 **Market Analysis** - Industry position and competitive landscape
+- 📊 **Investment Insights** - Risk assessment and recommendations
+- 🌍 **Macro Context** - Economic and sector trend analysis
+- ⚠️ **Risk Assessment** - ESG, regulatory, and sentiment analysis
+
+---
+
+## 🏗️ Project Structure
+
+```
+fundamental_analyst/
+├── 📱 app.py                          # Streamlit web application
+├── 📋 company_research_task.md         # Company research output
+├── 📋 financial_analysis_task.md       # Financial analysis output
+├── 📋 macro_sector_task.md            # Macro/sector analysis output
+├── 📋 risk_sentiment_task.md          # Risk/sentiment analysis output
+├── 📋 valuation_task.md               # Valuation analysis output
+├── 📄 report.md                       # Final comprehensive report
+├── 🔧 pyproject.toml                  # Project dependencies
+├── 🔒 uv.lock                         # Dependency lock file
+├── 📁 knowledge/
+│   └── 📝 user_preference.txt         # User preferences
+├── 📁 src/fundamental_analyst/
+│   ├── 🤖 crew.py                     # CrewAI orchestration
+│   ├── 🎯 main.py                     # Main execution script
+│   ├── 📁 config/
+│   │   ├── 👥 agents.yaml             # AI agent configurations
+│   │   └── 📋 tasks.yaml              # Task definitions
+│   └── 🛠️ tools/
+│       ├── 🔧 custom_tool.py          # Custom analysis tools
+│       └── 🔍 serper_tool.py          # Web search integration
+└── 🧪 tests/                          # Test files
 ```
 
-Next, navigate to your project directory and install the dependencies:
+---
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
+## ⚡ Quick Start
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+### 1️⃣ Prerequisites
 
-- Modify `src/fundamental_analyst/config/agents.yaml` to define your agents
-- Modify `src/fundamental_analyst/config/tasks.yaml` to define your tasks
-- Modify `src/fundamental_analyst/crew.py` to add your own logic, tools and specific args
-- Modify `src/fundamental_analyst/main.py` to add custom inputs for your agents and tasks
+- Python 3.8+
+- Google Gemini API Key
+- Serper API Key (for web search)
 
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+### 2️⃣ Installation
 
 ```bash
-$ crewai run
+# Clone the repository
+git clone <repository-url>
+cd fundamental_analyst
+
+# Install dependencies
+pip install -r requirements.txt
+# or if using uv
+uv sync
 ```
 
-This command initializes the Fundamental_analyst Crew, assembling the agents and assigning them tasks as defined in your configuration.
+### 3️⃣ Configuration
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+Set up your environment variables:
 
-## Understanding Your Crew
+```bash
+export GEMINI_API_KEY="your-gemini-api-key"
+export SERPER_API_KEY="your-serper-api-key"
+```
 
-The Fundamental_analyst Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+### 4️⃣ Run the Application
 
-## Support
+```bash
+# Start the Streamlit app
+streamlit run app.py
 
-For support, questions, or feedback regarding the FundamentalAnalyst Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+# Or run directly with Python
+python src/fundamental_analyst/main.py
+```
 
-Let's create wonders together with the power and simplicity of crewAI.
+---
+
+## 🎯 AI Agents & Tasks
+
+### 👥 Agent Roles
+
+| Agent                         | Role                   | Specialization                            |
+| ----------------------------- | ---------------------- | ----------------------------------------- |
+| 🔍 **Company Researcher**     | Senior Data Researcher | Latest developments, business model, news |
+| 💰 **Financial Analyst**      | Financial Expert       | Statement analysis, ratios, trends        |
+| 📊 **Valuation Analyst**      | Valuation Specialist   | DCF, comparable analysis, fair value      |
+| 🌍 **Macro Sector Analyst**   | Economic Expert        | Macro trends, industry analysis           |
+| ⚠️ **Risk Sentiment Analyst** | Risk Specialist        | ESG risks, sentiment, regulatory issues   |
+| 📝 **Reporting Analyst**      | Report Writer          | Comprehensive report generation           |
+
+### 📋 Analysis Tasks
+
+#### 🏢 Company Research
+
+```yaml
+Goal: Uncover cutting-edge developments in {company_name}
+Output: 10 key insights about business model, history, leadership, products
+```
+
+#### 💹 Financial Analysis
+
+```yaml
+Goal: Identify financial strengths, weaknesses, and trends
+Output: 10 financial insights from statements and ratios analysis
+```
+
+#### 💎 Valuation Analysis
+
+```yaml
+Goal: Determine intrinsic value using financial modeling
+Output: 10 valuation outcomes with DCF and comparable analysis
+```
+
+#### 🌐 Macro & Sector Analysis
+
+```yaml
+Goal: Provide economic and industry context
+Output: 10 macroeconomic factors impacting the company
+```
+
+#### ⚡ Risk & Sentiment Analysis
+
+```yaml
+Goal: Identify reputational, regulatory, and ESG risks
+Output: 10 key risks and sentiment trends
+```
+
+#### 📊 Final Reporting
+
+```yaml
+Goal: Create detailed investment report
+Output: Comprehensive markdown report with all analysis sections
+```
+
+---
+
+## 🖥️ Web Interface
+
+### 🎨 Features
+
+- **🔧 API Configuration** - Secure API key management
+- **🏢 Company Input** - Easy company selection with suggestions
+- **⚡ Real-time Analysis** - Live progress tracking
+- **📊 Interactive Reports** - Rich markdown report display
+- **💾 Export Options** - Download reports in multiple formats
+
+### 🚀 Usage
+
+1. **Configure APIs** - Enter your Gemini and Serper API keys
+2. **Select Company** - Enter the company name for analysis
+3. **Start Analysis** - Click "Start Fundamental Analysis"
+4. **View Results** - Review the comprehensive report
+5. **Download** - Export the analysis for future reference
+
+---
+
+## 🛠️ Technical Stack
+
+- **🤖 AI Framework**: CrewAI for agent orchestration
+- **🧠 Language Model**: Google Gemini 2.5 Flash Preview
+- **🌐 Web Search**: Serper API
+- **🖥️ Frontend**: Streamlit
+- **🐍 Language**: Python 3.8+
+- **📦 Package Manager**: UV (optional)
+
+---
+
+## 📈 Sample Output
+
+The analysis generates comprehensive reports covering:
+
+- **Executive Summary** with key investment highlights
+- **Business Overview** including model and competitive position
+- **Financial Performance** with trend analysis and ratios
+- **Valuation Analysis** with multiple methodologies
+- **Risk Assessment** covering various risk factors
+- **Investment Recommendation** with supporting rationale
+
+---
+
+## 🔧 Configuration
+
+### Environment Variables
+
+```bash
+GEMINI_API_KEY=your_gemini_api_key
+MODEL=gemini/gemini-2.5-flash-preview-05-20
+SERPER_API_KEY=your_serper_api_key
+```
+
+### Custom Preferences
+
+Edit `knowledge/user_preference.txt` to customize analysis focus and preferences.
+
+---
+
+## 🚨 Important Notes
+
+- **⚠️ Investment Disclaimer**: This tool is for educational and informational purposes only. Not investment advice.
+- **🔑 API Keys**: Keep your API keys secure and never commit them to version control
+- **📊 Data Accuracy**: Analysis quality depends on available public information
+- **⏱️ Processing Time**: Comprehensive analysis may take several minutes
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 💡 Support
+
+Having issues? Check out our [troubleshooting guide](TROUBLESHOOTING.md) or open an issue on GitHub.
+
+---
+
+<div align="center">
+
+**🚀 Ready to analyze your next investment?**
+
+[Get Started](#quick-start) • [View Demo](demo-link) • [Report Issues](issues-link)
+
+---
+
+_Built with ❤️ using CrewAI and Streamlit_
+
+</div>
