@@ -271,7 +271,7 @@ if st.button("🚀 Start Fundamental Analysis", type="primary"):
             
             # Add download option
             st.download_button(
-                label="📥 Download Report as PDF",
+                label="📥 Download Report",
                 data=report_md,
                 file_name=f"{company_name}_fundamental_analysis.md",
                 mime="text/markdown",
