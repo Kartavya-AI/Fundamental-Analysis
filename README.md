@@ -261,3 +261,10 @@ Having issues? Check out our [troubleshooting guide](TROUBLESHOOTING.md) or open
 _Built with ❤️ using CrewAI and Streamlit_
 
 </div>
+
+### GCP
+
+```bash
+TOKEN=$(gcloud auth print-identity-token)
+curl -H "Authorization: Bearer $TOKEN"      -H "Content-Type: application/json"       -d '{"company_name": "Tata Consultancy Services"}' https://fundamental-analysis-api-977121587860.asia-south1.run.app/fundamental-report
+```
