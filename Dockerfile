@@ -6,4 +6,6 @@ COPY . .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
+EXPOSE 8092
+
 CMD ["sh", "-c", "gunicorn --workers 4 --threads 2 --timeout 800 --bind 0.0.0.0:8092 api:app"]
